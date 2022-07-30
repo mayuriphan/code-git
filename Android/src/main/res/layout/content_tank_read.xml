@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="me.person.hybrid_energy.TankRead"
+    tools:showIn="@layout/activity_tank_read">
+
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="48dp"
+        android:text="Upper Reservoir"
+        android:textColor="#4648e1"/>
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv1"
+        android:layout_alignStart="@+id/tv1"
+        android:layout_below="@+id/tv1"
+        android:layout_marginTop="84dp"
+        android:text="Lower Reservoir"
+        android:textColor="#4648e1"/>
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/tv2"
+        android:layout_alignLeft="@+id/tv3"
+        android:layout_alignStart="@+id/tv3"
+        android:background="@drawable/corner"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#4648e1" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="60dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/tv2"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:background="@drawable/corner"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#4648e1" />
+</RelativeLayout>
+
