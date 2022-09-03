@@ -1,0 +1,15 @@
+package.json = npm init
+backend----
+add/create index.json manually
+1) on vs code
+npm i express
+npm i mongoose
+npm i nodemon
+frontend-----
+1) on cmd
+npx create-react-app frontend
+code . //to open vs code
+2) on vs code
+npm start // to start react server on localhost
+npm i react-router-dom // for routing endpoints
+npm install react-scripts --save // for react-script error while npm start
