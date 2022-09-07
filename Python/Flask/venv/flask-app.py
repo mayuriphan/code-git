@@ -7,13 +7,13 @@ app = Flask(__name__)
 # reading employee csv file 
 emp_df = pd.read_csv("employees.csv")
 
-@app.route("/",methods = ["POST","GET","PUT"])
+@app.route("/",methods = ["POST","GET"])
 def home():
     empid = request.form.get('Input1')
-    print(empid,request.method)
     if request.method == "GET":
         return render_template('index.html')        
     elif request.method == "POST":
+        # fetching employee details based on userid from dataframe and converting dataframe to dictionary
         df_list = (emp_df.loc[emp_df['Employee_id'] == int(empid)]).to_dict("records")
         data =  df_list[0]["First Name"]
         return render_template('index.html',data = f"{data}")      
