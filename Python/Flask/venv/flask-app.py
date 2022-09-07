@@ -1,24 +1,22 @@
 from flask import Flask,jsonify,request,render_template
 import pandas as pd
-import json
+import json,ast
 
 app = Flask(__name__)
 
 # reading employee csv file 
 emp_df = pd.read_csv("employees.csv")
 
-@app.route("/",methods = ["POST","GET"])
+@app.route("/",methods = ["POST","GET","PUT"])
 def home():
+    empid = request.form.get('Input1')
+    print(empid,request.method)
     if request.method == "GET":
-        return render_template('index.html')
+        return render_template('index.html')        
     elif request.method == "POST":
-        record = json.loads(request.data)   
-        print(record)
-        return jsonify(record)
-
-# @app.route("/",methods = ["POST"])
-# def post_values():
-    
+        df_list = (emp_df.loc[emp_df['Employee_id'] == int(empid)]).to_dict("records")
+        data =  df_list[0]["First Name"]
+        return render_template('index.html',data = f"{data}")      
 
 @app.route("/employee-details",methods=["GET"])  
 def get_all_emp_details(): 
@@ -31,7 +29,8 @@ def get_all_emp_details():
 @app.route("/employee-details/<empid>",methods=["GET"])  
 def get_empid_details(empid):
     # fetching employee details based on userid from dataframe and converting dataframe to json
-    emp_json = emp_df.query(f'Employee_id == {empid}').to_json()
+    df = emp_df.loc[emp_df['Employee_id'] == int(empid)]
+    emp_json = jsonify(df.to_dict("records"))
     return emp_json
 
 

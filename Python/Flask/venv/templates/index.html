@@ -1,18 +1,20 @@
 <html>
 <body>
 
-<h1>Welcome to Flask App !</h1>
+<h1>Welcome to Flask App {{data}}!</h1>
 
-<form action>
-  <label for="input">Input something:</label>
-  <input type="text" id="input" name="Input"><br><br>
+<form action method = "post">
+  <label for="id">Employee ID:</label>
+  <input type="text" id="input1" name="Input1" value=""><br><br>
+  <label for="team">Change Team:</label>
+  <input type="text" id="input2" name="Input2"><br><br>
   <input type="submit" value="Submit">
 </form>
 <p></p>
-<!-- <h4>Get url: 127.0.0.1:5000/employee-details</h4> -->
-<!-- <h4>Get url: 127.0.0.1:5000/employee-details/1001</h4> -->
 <a href="/employee-details">Click to Get All Employee details!</a>
 <p></p>
 <a href="/employee-details/1001">Click to Get Employee details with userid :1001.Change userid in link for different userids</a>
+
+<p>{{team}}</p>>
 </body>
 </html>
