@@ -88,20 +88,58 @@ const config = {
     floating: true,
 };
  
+
 function App() {
-    return (
-        <div className="App">
-            <ThemeProvider theme={theme}>
-                <ChatBot
-                // chatbot header
-                    headerTitle="ChatBot"
-                    steps={steps}
-                    {...config}
- 
-                />
-            </ThemeProvider>
+  function buyButton() {
+    // document.getElementById("b1").onclick = 'Checking Availability'
+    alert('Checking Availability!')
+    
+  }
+  return (  
+         
+    <div id="root">
+      <body>
+        <h1 class = "center"> Guitar </h1>
+        <div class="pic">
+          <img src="./g1.PNG"  width="350" height="400" alt=''></img>    
+          <img src="./g2.PNG"  width="200" height="400" alt=''></img> 
+          <img src="./g3.PNG"  width="200" height="400" alt=''></img> 
+          <img src="./g4.PNG"  width="300" height="400" alt=''></img> 
         </div>
-    );
+      <div class="gtr">
+      <h4>Guitar1 : Accoustic Guitar</h4>
+      <h4>Guitar2 : Electric Guitar</h4>
+      <h4>Guitar3 : Electric Accoustic Guitar</h4>
+      <h4>Guitar4 : Bass Guitar</h4>
+      </div>
+
+      <div class="prc">
+        <h4>Price : Rs2000</h4>
+        <h4>Price : Rs2500</h4>
+        <h4>Price : Rs2500</h4>
+        <h4>Price : Rs2500</h4>
+      </div>
+
+      <div class="btn">
+      <button id = "b1" onClick={ buyButton}>Buy</button>
+      <button type="button" id = "b2" onClick={buyButton}>Buy</button>
+      <button type="button" id = "b3" onClick={buyButton}>Buy</button>
+      <button type="button" id = "b4" onClick={buyButton}>Buy</button>
+      </div>
+    {/* <div className="App"></div> */}
+    <ThemeProvider theme={theme}>
+      <ChatBot
+      // chatbot header
+          headerTitle="ChatBot"
+          steps={steps}
+          {...config}
+
+      />
+    </ThemeProvider>
+    </body>
+  </div>
+
+  );
 }
 
 

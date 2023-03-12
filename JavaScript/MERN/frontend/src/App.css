@@ -30,6 +30,19 @@
 .Homepage-link {
   color: #61dafb;
 }
+.btn,.gtr,.prc,.heading,.pic{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width:80%;
+  font-size: 20px;
+  padding: 0 14px;
+  color:blueviolet
+}
+.center{
+text-align: center;
+color: brown;
+}
 
 @keyframes App-logo-spin {
   from {
@@ -39,3 +52,4 @@
     transform: rotate(360deg);
   }
 }
+
