@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Axios from 'axios';
 import './App.css';
 import bot from './images/bot.png';
 import ChatBot from 'react-simple-chatbot';
@@ -87,16 +88,22 @@ const config = {
     botAvatar: bot,
     floating: true,
 };
- 
 
 function App() {
-  function buyButton() {
-    // document.getElementById("b1").onclick = 'Checking Availability'
-    alert('Checking Availability!')
-    
+  const [price,setPrice]=useState();
+  const [quantity,setQuantity]=useState();  
+  
+  // check Guitar's price and quantity available
+  function checkButton(e) {
+    alert('Checking Details!')
+    var id = e.target.id
+    Axios.get("http://localhost:5000/getGtr/check",{params:{guitarid:id}})
+    .then(response=>{console.log(response)
+    setPrice(response.data[0].price)
+    setQuantity(response.data[0].quantity)
+  });  
   }
-  return (  
-         
+  return (         
     <div id="root">
       <body>
         <h1 class = "center"> Guitar </h1>
@@ -113,20 +120,17 @@ function App() {
       <h4>Guitar4 : Bass Guitar</h4>
       </div>
 
-      <div class="prc">
-        <h4>Price : Rs2000</h4>
-        <h4>Price : Rs2500</h4>
-        <h4>Price : Rs2500</h4>
-        <h4>Price : Rs2500</h4>
-      </div>
-
       <div class="btn">
-      <button id = "b1" onClick={ buyButton}>Buy</button>
-      <button type="button" id = "b2" onClick={buyButton}>Buy</button>
-      <button type="button" id = "b3" onClick={buyButton}>Buy</button>
-      <button type="button" id = "b4" onClick={buyButton}>Buy</button>
+      <button type="button" id = "g1" onClick={(e) => checkButton(e)}>Check</button>
+      <button type="button" id = "g2" onClick={(e) => checkButton(e)}>Check</button>
+      <button type="button" id = "g3" onClick={(e) => checkButton(e)}>Check</button>
+      <button type="button" id = "g4" onClick={(e) => checkButton(e)}>Check</button>
       </div>
-    {/* <div className="App"></div> */}
+      <br></br>
+      <p>Price: Rs.{price}</p>
+      <br></br>
+      <p>Quantity: {quantity}</p>
+
     <ThemeProvider theme={theme}>
       <ChatBot
       // chatbot header

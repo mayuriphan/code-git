@@ -1,0 +1,15 @@
+date:03/14/2023
+author: mayuri
+
+1. Learning MERN Stack
+2. Created an application to check Guitar price.
+3. Frontend is developed using Reactjs.
+    . Application displays four differnt types of Guitars with check buttons under each guitar.
+    . Check button returns Guitar's price and available quantity.
+4. Backend is developed using Nodejs and Express.
+    . Have created API enpoints for :
+        . inserting guitar data. Api can be tested using Postman or Insomnia tools.
+        . fetching guitar data. Api can be tested using Postman or Insomnia tools.
+        . fetching only specific guitar data using check buttons.
+Technology used: MongoDb, Express, Reactjs, Nodejs, Javascript,HTML.
+
