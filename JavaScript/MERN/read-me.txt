@@ -11,5 +11,6 @@ author: mayuri
         . inserting guitar data. Api can be tested using Postman or Insomnia tools.
         . fetching guitar data. Api can be tested using Postman or Insomnia tools.
         . fetching only specific guitar data using check buttons.
-Technology used: MongoDb, Express, Reactjs, Nodejs, Javascript,HTML.
+5. Used MongoDB Atlas for storing data.
+Technology used: MongoDb Atlas, Express, Reactjs, Nodejs, Javascript,HTML.
 
