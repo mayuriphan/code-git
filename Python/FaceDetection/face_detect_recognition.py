@@ -22,9 +22,8 @@ while True:
     face_loc = fr.face_locations(rgb_fram)
     face_encode = fr.face_encodings(rgb_fram,face_loc)
 
-# chk line 
     for (top, right, bottom, left), face_encoding in zip(face_loc,face_encode):
-        print(top, right, bottom, left)
+        # print(top, right, bottom, left)
         mtch = fr.compare_faces(known_encoding,face_encoding)
         name = "new_img"
         face_dist = fr.face_distance(known_encoding,face_encoding)
@@ -32,7 +31,7 @@ while True:
         if mtch[match_i]:
             name = k_name[match_i]
         cv2.rectangle(fram,(left,top),(right,bottom),(0,0,255),2)
-        cv2.rectangle(fram,(left,bottom -35),(right,bottom),(0,0,255),cv2.FILLED)
+        cv2.rectangle(fram,(left,bottom -15),(right,bottom),(0,0,255),cv2.FILLED)
         fnt = cv2.FONT_HERSHEY_SIMPLEX
         cv2.putText(fram,name,(left+6,bottom-6),fnt,1.0,(255,255,255),1)
       
