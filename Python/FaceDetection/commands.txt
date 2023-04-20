@@ -1,6 +1,7 @@
 python -m pip install -U setuptools
 pip install opencv-python
 pip install opencv-contrib-python
+opencv-python-headless
 python -m pip install cmake
 dlib-19.19.0-cp38-cp38-win_amd64.whl
 
