@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "python-exchanges"
+version = "1.0.0"
+description = "Exchange websocket connections for streaming market data."
+authors = ["Mayuri"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<4.0"
+loguru = "^0.7.0"
+websockets = "^12.0"
+pyyaml = "^6.0.2"
+influxdb = "^5.3.1"
+requests = "^2.31.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.2"
+pytest-cov = "^7.0.0"
+flake8 = "^6.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
