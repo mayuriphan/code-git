@@ -1,6 +1,7 @@
-import asyncio
 import json
 import websockets
+
+from loguru import logger
 
 from base import BaseExchangeClass
 
@@ -10,14 +11,14 @@ class BinanceExchange(BaseExchangeClass):
     async def connect(self):
         stream = f"{self.symbol.lower()}@trade"
         self.ws = await websockets.connect(f"{self.BASE_URL}/{stream}")
-        print("Connected to Binance")
+        logger.info("Connected to Binance")
 
     async def subscribe(self):
         async for message in self.ws:
             data = json.loads(message)
-            normalized = self.process(data)
-            print(normalized)
-            print("============================================")
+            processed_data = self.process(data)
+            logger.debug(processed_data)
+            logger.debug("============================================")
 
     def process(self, message: dict) -> dict:
         return {
