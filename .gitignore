@@ -9,5 +9,6 @@ __py*
 *.tfstate.backup
 terraform.tfstate.d/
 *.tfplan
+*.tfplan-prod
 .terraform/environment
 crash.log
